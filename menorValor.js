@@ -4,7 +4,7 @@ function menorValor(arrayProdutos, posicaoInicial) {
 
     let maisBarato = posicaoInicial;
 
-    for(let i = 0; i < arrayProdutos.length; i++){
+    for(let i = posicaoInicial; i < arrayProdutos.length; i++){
         if(arrayProdutos[i].preco < arrayProdutos[maisBarato].preco){
             maisBarato = i;
         }else {

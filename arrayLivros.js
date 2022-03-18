@@ -26,4 +26,6 @@ const livros = [
     }
 ]
 
-module.exports = livros; // Exporta o objeto livros
+const precosLivros = [25, 15, 30, 50, 45, 20];
+
+module.exports = livros; // Exporta o array de objetos livros

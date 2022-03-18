@@ -1,32 +1,4 @@
-//Aula I
-
-const livros = [
-    { 
-        nome: "javaScript",
-        preco: 25
-    },
-    {
-        nome: "PHP",
-        preco: 15
-    },
-    {
-        nome: "Java",
-        preco: 30
-    },
-    {
-        nome: "Elixir",
-        preco: 50
-    },
-    {
-        nome: "Go",
-        preco: 45
-    },
-
-    {
-        nome: "Phyton",
-        preco: 20
-    }
-]
+const livros = require('./arrayLivros'); // importa o objeto livros do arquivo arrayLivros
 
 console.table(livros)
 
@@ -45,25 +17,23 @@ function menorPreco(objeto) {
     return objeto[menor];
 }
 
-function ordenaLivros(objeto) {
+// function ordenaLivros(objeto) {
 
-    let temp = {};
+//     let temp = {};
 
-    for(let i = 0; i < objeto.length; i++) {
-        for(let j = 1; j <= objeto.length; j++) {
-            if((objeto[i].preco) > (objeto[j].preco)) {
-                temp = objeto[j];
-                objeto[j] = objeto[i];
-                objeto[i] = temp;
-            }else {
-                continue;
-            }
-        }
-    }
+//     for(let i = 0; i < objeto.length; i++) {
+//         for(let j = 1; j <= objeto.length; j++) {
+//             if((objeto[i].preco) > (objeto[j].preco)) {
+//                 temp = objeto[j];
+//                 objeto[j] = objeto[i];
+//                 objeto[i] = temp;
+//             }else {
+//                 continue;
+//             }
+//         }
+//     }
 
-    return objeto;
-}
+//     return objeto;
+// }
 
-//console.table(menorPreco(livros))
-
-console.table(ordenaLivros(livros))
+console.table(menorPreco(livros))

@@ -1,75 +1,69 @@
 //Aula I
 
-const livros = {
-    javaScript : {
+const livros = [
+    { 
         nome: "javaScript",
         preco: 25
     },
-
-     php : {
+    {
         nome: "PHP",
         preco: 15
     },
-
-    java : {
+    {
         nome: "Java",
         preco: 30
     },
-
-    elixir : {
+    {
         nome: "Elixir",
         preco: 50
     },
-
-    go : {
+    {
         nome: "Go",
         preco: 45
     },
 
-    phyton : {
+    {
         nome: "Phyton",
         preco: 20
     }
-}
+]
 
-const precosLivros = [25, 15, 30, 50, 45, 20];
+console.table(livros)
 
-function menorPreco(array) {
+function menorPreco(objeto) {
 
-    let precoMinimo = 0; //índice
+    let menor = 0;
 
-    for(let i = 0; i < array.length; i++){
-        if(array[i] < array[precoMinimo]){
-            precoMinimo = i; //guarda o índice da onde está o número mais baixo
-        }else{
+    for(let i = 0; i < objeto.length; i++){
+        if(objeto[i].preco < objeto[menor].preco){
+            menor = i;
+        }else {
             continue;
         }
     }
 
-    return array[precoMinimo]; //retorna o menor número do array 
+    return objeto[menor];
 }
 
-console.log(menorPreco(precosLivros))
+function ordenaLivros(objeto) {
 
+    let temp = {};
 
-//console.log(livros)
+    for(let i = 0; i < objeto.length; i++) {
+        for(let j = 1; j <= objeto.length; j++) {
+            if((objeto[i].preco) > (objeto[j].preco)) {
+                temp = objeto[j];
+                objeto[j] = objeto[i];
+                objeto[i] = temp;
+            }else {
+                continue;
+            }
+        }
+    }
 
-// function ordenaPreco(objeto){
-//     let temp = [];
-//      console.log("Ola")
-//     for (let i = 0; i < objeto.length; i++) {
-//         for (let j = 1; j <= objeto.length; j++){
-//             if(objeto[i].preco > objeto[j].preco && objeto[j].preco < objeto[i].preco){
-//                 temp = objeto[j];
-//                 objeto[j] = objeto[i];
-//                 objeto[i] = temp;
-//                 console.log("Olá")
-//             }else{
-//                 continue;
-//             }
-//         }
-//     }
-//     return objeto;
-// }
+    return objeto;
+}
 
+//console.table(menorPreco(livros))
 
+console.table(ordenaLivros(livros))
